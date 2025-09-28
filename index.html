@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopNest collections - Crafted with Intention</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+        </symbol>
+    </svg>
+
+    <header>
+        <div class="header-content">
+            <span class="logo">ShopNest collections</span>
+            <div class="header-icons">
+                <div class="search-container">
+                    <input type="search" id="search-input" placeholder="Search products...">
+                    <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <div id="wishlist-nav-icon" class="wishlist-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span id="wishlist-count">0</span>
+                </div>
+                <div id="cart-nav-icon" class="cart-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Crafted with Intention</h1>
+        </section>
+
+        <div id="filter-container">
+            <nav class="filters">
+                <ul>
+                    <li><a href="#" class="filter-btn active" data-filter="all">All</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="ceramics">Ceramics</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="textiles">Textiles</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="jewelry">Jewelry</a></li>
+                    <li><a href="#" class="filter-btn" data-filter="home-goods">Home Goods</a></li>
+                </ul>
+            </nav>
+            <div class="sort-container">
+                <label for="sort-by">Sort by:</label>
+                <select name="sort-by" id="sort-by">
+                    <option value="default">Default</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="name-asc">Name: A to Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="wishlist-view-header" class="hidden">
+            <h2 class="wishlist-title">My Wishlist</h2>
+            <button id="back-to-shop-btn" class="back-btn">← Back to Shop</button>
+        </div>
+        <p id="empty-wishlist-message" class="hidden">Your wishlist is empty. Add some products you love!</p>
+
+        <div class="product-grid">
+            <div class="product-card" data-category="ceramics" data-name="Dotted Ceramic Mug" data-price="₹1,999" data-description="A beautifully handcrafted ceramic mug with a unique dotted texture. Perfect for your morning coffee or evening tea rituals." data-images="https://craftzone.in/backend/uploads/products/SKU736223250125/0712f4f4a8e315a35c6a14653d150228.webp,https://craftzone.in/backend/uploads/products/SKU736223250125/d1289f790b81d712336b091cb9ad0e2a.webp,https://craftzone.in/backend/uploads/products/SKU736223250125/10bf1ad253c10e71df4916af3f5a0a36.webp">
+                <img src="https://craftzone.in/backend/uploads/products/SKU736223250125/0712f4f4a8e315a35c6a14653d150228.webp" alt="Dotted Ceramic Mug">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Dotted Ceramic Mug</h4>
+                    <p class="product-price">₹1,999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Minimalist Planter" data-price="₹3,000" data-description="A minimalist ceramic planter with a smooth matte finish, designed to complement your favorite houseplants." data-images="https://m.media-amazon.com/images/I/41ra9u5q7lL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71nc+iZRHlL._SX679_.jpg,https://m.media-amazon.com/images/I/612YPKMf7pL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/41ra9u5q7lL._SY300_SX300_QL70_FMwebp_.jpg" alt="Minimalist Planter">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Minimalist Planter</h4>
+                    <p class="product-price">₹3,000</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Serving Bowl" data-price="₹2,999" data-description="A large, versatile ceramic serving bowl, ideal for salads, pasta, or as a fruit bowl." data-images="https://m.media-amazon.com/images/I/61EQ824Bl7L._SX679_.jpg,https://m.media-amazon.com/images/I/61ZJZHijuXL._SX679_.jpg,https://m.media-amazon.com/images/I/813g-u7ri7L._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61EQ824Bl7L._SX679_.jpg" alt="Serving Bowl">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Serving Bowl</h4>
+                    <p class="product-price">₹2,999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Artisan Teapot Set" data-price="₹4,500" data-description="A complete artisan teapot set, including a pot and four cups. Glazed with a reactive finish for a unique, earthy look." data-images="https://m.media-amazon.com/images/I/61CbNBmjArL._SX679_.jpg,https://m.media-amazon.com/images/I/71sEHGgjVrL._SX679_.jpg,https://m.media-amazon.com/images/I/61TzwhTEntL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61CbNBmjArL._SX679_.jpg" alt="Artisan Teapot Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Artisan Teapot Set</h4>
+                    <p class="product-price">₹4,500</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Fluted Flower Vase" data-price="₹2,200" data-description="A tall, fluted ceramic vase with a matte white finish. Its elegant silhouette is perfect for long-stemmed flowers." data-images="https://m.media-amazon.com/images/I/71KZIR2NuzL._SX679_.jpg,https://m.media-amazon.com/images/I/61L4UE3bkqL._SX679_.jpg,https://m.media-amazon.com/images/I/41qW1KIJYvL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71KZIR2NuzL._SX679_.jpg" alt="Fluted Flower Vase">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Fluted Flower Vase</h4>
+                    <p class="product-price">₹2,200</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Ceramic Soap Dispenser" data-price="₹1,599" data-description="Upgrade your bathroom with this stylish ceramic soap dispenser, featuring a stainless steel pump." data-images="https://m.media-amazon.com/images/I/714s7wtvF8L._SX679_.jpg,https://m.media-amazon.com/images/I/41BE7tkp2HL._SS100_.jpg,https://m.media-amazon.com/images/I/41TdAW9QduL._SS100_.jpg">
+                <img src="https://m.media-amazon.com/images/I/714s7wtvF8L._SX679_.jpg" alt="Ceramic Soap Dispenser">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Ceramic Soap Dispenser</h4>
+                    <p class="product-price">₹1,599</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Dinner Plate Set" data-price="₹5,500" data-description="A set of four elegant ceramic dinner plates. Microwave and dishwasher safe, perfect for daily use." data-images="https://m.media-amazon.com/images/I/71IbLXD-1tL._SX679_.jpg,https://m.media-amazon.com/images/I/710ujjHYGRL._SX679_.jpg,https://m.media-amazon.com/images/I/51T6-2SLzcL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71IbLXD-1tL._SX679_.jpg" alt="Dinner Plate Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Dinner Plate Set</h4>
+                    <p class="product-price">₹5,500</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Incense Stick Holder" data-price="₹999" data-description="A minimalist ceramic incense holder designed to catch ash cleanly. Adds a serene touch to any room." data-images="https://m.media-amazon.com/images/I/513diJmuasL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71+cCmnMiLL._SX679_.jpg,https://m.media-amazon.com/images/I/81GA9iHFGNL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/513diJmuasL._SY300_SX300_QL70_FMwebp_.jpg" alt="Incense Stick Holder">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Incense Stick Holder</h4>
+                    <p class="product-price">₹999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Utensil Holder" data-price="₹1,850" data-description="Keep your kitchen organized with this sturdy and spacious ceramic utensil holder. Wide mouth for easy access." data-images="https://m.media-amazon.com/images/I/71qXmP-BynL._SX679_.jpg,https://m.media-amazon.com/images/I/713rzEVDyRL._SX679_.jpg,https://m.media-amazon.com/images/I/71UPfkTUBWL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71qXmP-BynL._SX679_.jpg" alt="Utensil Holder">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Utensil Holder</h4>
+                    <p class="product-price">₹1,850</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="ceramics" data-name="Ceramic Ring Dish" data-price="₹1,200" data-description="A charming little dish to keep your rings and trinkets safe. Hand-painted with a gold rim for a touch of elegance." data-images="https://m.media-amazon.com/images/I/71ZYwBqtyKL._SX679_.jpg,https://m.media-amazon.com/images/I/71y0fBsR9OL._SX679_.jpg,https://m.media-amazon.com/images/I/71Z-XMNgDuL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71ZYwBqtyKL._SX679_.jpg" alt="Ceramic Ring Dish">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Ceramic Ring Dish</h4>
+                    <p class="product-price">₹1,200</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="textiles" data-name="Woven Throw Blanket" data-price="₹2,599" data-description="Hand-woven from 100% natural cotton, this throw blanket adds warmth and texture to any living space. Incredibly soft and durable." data-images="https://images.squarespace-cdn.com/content/v1/6170b495453d5e0986bd39ad/1660112383532-WH586BDHN4B0TB3A4E2E/WB_Amanda%2BWest%2BThrow%2BBlanket%2BPeonies%2BOrchids%2B+copy.jpg?format=2500w,https://images.squarespace-cdn.com/content/v1/6170b495453d5e0986bd39ad/1643826403311-S7FMW945UIJOPWA4ODLU/amanda_West_woven%2Bthrow-2.jpg?format=1500w">
+                <img src="https://images.squarespace-cdn.com/content/v1/6170b495453d5e0986bd39ad/1660112383532-WH586BDHN4B0TB3A4E2E/WB_Amanda%2BWest%2BThrow%2BBlanket%2BPeonies%2BOrchids%2B+copy.jpg?format=2500w" alt="Woven Throw Blanket">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Woven Throw Blanket</h4>
+                    <p class="product-price">₹2,599</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Linen Cushion Cover" data-price="₹1,200" data-description="A soft, breathable linen cushion cover that adds a touch of rustic elegance to your sofa or bed." data-images="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSuGquSaexVaeC_GD1olFFzXhpEzGkMEGxRFY3a2Al0Y3BL42yg9xePO8SSzfkzE5DZZL3MXg7DgKwGgTkjJ3Gz4FrlD1Q9JB8OjIU57kRUzXQEDJJCj19wsw,https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRQZWlEsG8zVyHG75tLuXdJAnfSy8CI190PP2Q9lTuwfaSCRwEIPH0DQF4-JyC73z_0z5au17Zb4DJc1SDIL6GKjasBb3qcSBcgHPdBCZw">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSuGquSaexVaeC_GD1olFFzXhpEzGkMEGxRFY3a2Al0Y3BL42yg9xePO8SSzfkzE5DZZL3MXg7DgKwGgTkjJ3Gz4FrlD1Q9JB8OjIU57kRUzXQEDJJCj19wsw" alt="Linen Cushion Cover">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Linen Cushion Cover</h4>
+                    <p class="product-price">₹1,200</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Macrame Wall Hanging" data-price="₹2,499" data-description="Intricately knotted by hand, this macrame wall hanging brings a bohemian charm and texture to your walls." data-images="https://cdn.shopify.com/s/files/1/0632/2526/6422/files/1_9896671e-b740-41f1-86b5-45f87006bc0d.jpg?v=1758634565&width=1728,https://cdn.shopify.com/s/files/1/0632/2526/6422/files/4_9540d8ec-0505-4f6a-b1b4-1df6671a0692.jpg?v=1758634565&width=1728">
+                <img src="https://cdn.shopify.com/s/files/1/0632/2526/6422/files/1_9896671e-b740-41f1-86b5-45f87006bc0d.jpg?v=1758634565&width=1728" alt="Macrame Wall Hanging">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Macrame Wall Hanging</h4>
+                    <p class="product-price">₹2,499</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Hand-Block Print Tablecloth" data-price="₹1,800" data-description="Adorn your dining table with this beautiful tablecloth, featuring traditional Indian hand-block printing." data-images="https://m.media-amazon.com/images/I/514zJjq9BoL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71SOWjNLTeL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/514zJjq9BoL._SY300_SX300_QL70_FMwebp_.jpg" alt="Hand-Block Print Tablecloth">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Hand-Block Print Tablecloth</h4>
+                    <p class="product-price">₹1,800</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Round Jute Rug" data-price="₹3,500" data-description="Eco-friendly and durable, this hand-braided round jute rug adds a natural and rustic element to your flooring." data-images="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQz3q8J2OuBbSRd_noarQR-vWQeODE32ho0TcFVEBpLzykzTqan_LQxNXCg2uCkbBmJ-OIjokFlEL3xZyilfdxSndKsMsMaoav3uunXxQg,">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQz3q8J2OuBbSRd_noarQR-vWQeODE32ho0TcFVEBpLzykzTqan_LQxNXCg2uCkbBmJ-OIjokFlEL3xZyilfdxSndKsMsMaoav3uunXxQg" alt="Round Jute Rug">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Round Jute Rug</h4>
+                    <p class="product-price">₹3,500</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Embroidered Napkin Set" data-price="₹1,299" data-description="Set of four cotton napkins with delicate, minimalist embroidery. Perfect for special occasions and dinner parties." data-images="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTD2uSF0cKaKgYRye070MZ_CADMudC4lgAP-XGgIVXVtTONQLiUxx5Dsbbsc8jD_h8N0s3du9BljKlVnXmlWqD2eCn71XSAcdUu0jOKqZU,https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQb3zMnxV7cRR33zV35PpamFMvaj5lA59wOYcFMK1AvKdVySw4Hmevc5KevuSe1tSqmTEWQP9LH4CvuD3ooOpsdvGqtUz7DqgrXVV25">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTD2uSF0cKaKgYRye070MZ_CADMudC4lgAP-XGgIVXVtTONQLiUxx5Dsbbsc8jD_h8N0s3du9BljKlVnXmlWqD2eCn71XSAcdUu0jOKqZU" alt="Embroidered Napkin Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Embroidered Napkin Set</h4>
+                    <p class="product-price">₹1,299</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Quilted Bedspread" data-price="₹7,999" data-description="A luxurious and soft quilted bedspread made from pure cotton. Provides an extra layer of warmth and style." data-images="https://m.media-amazon.com/images/I/51Td0udBfGL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/81WoSxeylcL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/51Td0udBfGL._SY300_SX300_QL70_FMwebp_.jpg" alt="Quilted Bedspread">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Quilted Bedspread</h4>
+                    <p class="product-price">₹7,999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Velvet Pillow Covers" data-price="₹1,450" data-description="A pair of plush velvet pillow covers to add a pop of color and rich texture to your living room or bedroom." data-images="https://m.media-amazon.com/images/I/61YNx-3ii2L._SX679_.jpg,https://m.media-amazon.com/images/I/414KwICCckL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61YNx-3ii2L._SX679_.jpg" alt="Velvet Pillow Covers">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Velvet Pillow Covers</h4>
+                    <p class="product-price">₹1,450</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Woven Placemat Set" data-price="₹999" data-description="Set of four hand-woven placemats made from sabai grass. Eco-friendly and perfect for a rustic dining setup." data-images="https://m.media-amazon.com/images/I/51b0u6+lcEL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71drrSOq1kL._SY879_.jpg">
+                <img src="https://m.media-amazon.com/images/I/51b0u6+lcEL._SY300_SX300_QL70_FMwebp_.jpg" alt="Woven Placemat Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Woven Placemat Set</h4>
+                    <p class="product-price">₹999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="textiles" data-name="Modal Silk Scarf" data-price="₹1,950" data-description="A lightweight and incredibly soft scarf made from modal silk, featuring an abstract artistic print." data-images="https://m.media-amazon.com/images/I/51rylCny33L.jpg,https://m.media-amazon.com/images/I/41-0BmXMTbL.jpg">
+                <img src="https://m.media-amazon.com/images/I/51rylCny33L.jpg" alt="Modal Silk Scarf">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Modal Silk Scarf</h4>
+                    <p class="product-price">₹1,950</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="jewelry" data-name="Silver Hoop Earrings" data-price="₹459" data-description="Classic silver hoop earrings with a modern twist. Lightweight and perfect for everyday wear." data-images="https://www.truesilver.co.in/cdn/shop/products/71NPDLJGVLL.jpg?v=1698730132,https://www.truesilver.co.in/cdn/shop/files/HP184687AT-_2.jpg?v=1734935524">
+                <img src="https://www.truesilver.co.in/cdn/shop/products/71NPDLJGVLL.jpg?v=1698730132" alt="Silver Hoop Earrings">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Silver Hoop Earrings</h4>
+                    <p class="product-price">₹459</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Kundan Choker Set" data-price="₹4,899" data-description="An exquisite Kundan choker necklace set with matching earrings, perfect for weddings and festive occasions." data-images="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSNZy3VKu9BdGTjuYHhu4n3FCOjhT-Sk08EZEy19waUqR_c4ahzynnERPCTKEob56Acg7M_4U8LLGFwfePC3nvgc7EZ54p3,https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ2jD9BC26TJdXjSzIjFwhmuk_lkUFdsiDuPYG4ZslHyh_V3BACfgZUgc8f93dZtzT3MyWYGDwwj37vfqb4qvUvlJJzTEDL">
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSNZy3VKu9BdGTjuYHhu4n3FCOjhT-Sk08EZEy19waUqR_c4ahzynnERPCTKEob56Acg7M_4U8LLGFwfePC3nvgc7EZ54p3" alt="Kundan Choker Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Kundan Choker Set</h4>
+                    <p class="product-price">₹4,899</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Oxidized Silver Jhumkas" data-price="₹799" data-description="Traditional oxidized silver jhumka earrings with intricate detailing, offering a classic ethnic look." data-images="https://m.media-amazon.com/images/I/71FpUCghGrL._SY695_.jpg,https://m.media-amazon.com/images/I/61v0znPhnPL._SY695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71FpUCghGrL._SY695_.jpg" alt="Oxidized Silver Jhumkas">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Oxidized Silver Jhumkas</h4>
+                    <p class="product-price">₹799</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Beaded Bracelet" data-price="₹550" data-description="A vibrant, multi-strand beaded bracelet made with semi-precious stones. Stretchable for a comfortable fit." data-images="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQDkKuAqExD-RrfY7rvnIh305ohmpSw5l7Mp9aHL1S11qWUlM4lLwW8sDPG3aKtAd6nY-ZXBgGteloxwfZcD_KqagHOBUNVuTr0KoHysUMTHspQqIDEIP7QkQ,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTBahsn9FaqQQouTRiS23snigSx82lSwnKcbRIbeH7lW5UN_NsxmdL7Mp-dcTUtLZnJhmQZ8cJ8jUkid2acjtaByAEoo-0q8FzWnqaxNg">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQDkKuAqExD-RrfY7rvnIh305ohmpSw5l7Mp9aHL1S11qWUlM4lLwW8sDPG3aKtAd6nY-ZXBgGteloxwfZcD_KqagHOBUNVuTr0KoHysUMTHspQqIDEIP7QkQ" alt="Beaded Bracelet">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Beaded Bracelet</h4>
+                    <p class="product-price">₹550</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Silver Pendant Necklace" data-price="₹1,500" data-description="An elegant sterling silver necklace featuring a minimalist pendant on a delicate chain. Perfect for layering." data-images="https://m.media-amazon.com/images/I/71TJXxYTdQL._SY695_.jpg,https://m.media-amazon.com/images/I/91UDZ5fZ27L._SY695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71TJXxYTdQL._SY695_.jpg" alt="Silver Pendant Necklace">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Silver Pendant Necklace</h4>
+                    <p class="product-price">₹1,500</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Terracotta Earrings" data-price="₹899" data-description="Handcrafted and hand-painted terracotta clay earrings, offering a unique and earthy ethnic appeal." data-images="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSUP-1slkJiuMpbPUzcJX2TVOazrlYn7lc8CNDs5MZ-XOOZt01jNFVl-r6ah6r5QtJgFVDtAJDD_OFlcHvs-RpFb3VqTgSsEvZAfjOWIlj8FZPDyI8XNzjfnw">
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSUP-1slkJiuMpbPUzcJX2TVOazrlYn7lc8CNDs5MZ-XOOZt01jNFVl-r6ah6r5QtJgFVDtAJDD_OFlcHvs-RpFb3VqTgSsEvZAfjOWIlj8FZPDyI8XNzjfnw" alt="Terracotta Earrings">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Terracotta Earrings</h4>
+                    <p class="product-price">₹899</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Adjustable Finger Ring" data-price="₹650" data-description="A contemporary adjustable finger ring crafted from brass with a unique hammered texture." data-images="https://m.media-amazon.com/images/I/51Gquz43+sL._SY695_.jpg,https://m.media-amazon.com/images/I/51mFTlslaCL._SY695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/51Gquz43+sL._SY695_.jpg" alt="Adjustable Finger Ring">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Adjustable Finger Ring</h4>
+                    <p class="product-price">₹650</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Pearl Drop Earrings" data-price="₹1,250" data-description="Classic and timeless, these earrings feature lustrous freshwater pearls suspended from gold-plated hooks." data-images="https://m.media-amazon.com/images/I/71jwIXjnARL._SY695_.jpg,https://m.media-amazon.com/images/I/A1J9zy3cs9L._SY695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71jwIXjnARL._SY695_.jpg" alt="Pearl Drop Earrings">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Pearl Drop Earrings</h4>
+                    <p class="product-price">₹1,250</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Meenakari Studs" data-price="₹950" data-description="Colorful Meenakari enamel work on these beautiful stud earrings makes them a vibrant addition to any outfit." data-images="https://m.media-amazon.com/images/I/71mL3awg3sL._SX695_.jpg,https://m.media-amazon.com/images/I/71XSWEzaITL._SX695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71mL3awg3sL._SX695_.jpg" alt="Meenakari Studs">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Meenakari Studs</h4>
+                    <p class="product-price">₹950</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="jewelry" data-name="Silver Anklet (Payal)" data-price="₹2,200" data-description="A beautiful sterling silver anklet with delicate charms that create a soft, pleasant sound. A traditional classic." data-images="https://m.media-amazon.com/images/I/71wkpwtsx8L._SY695_.jpg,https://m.media-amazon.com/images/I/510km0-fvYL._SY695_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71wkpwtsx8L._SY695_.jpg" alt="Silver Anklet (Payal)">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Silver Anklet (Payal)</h4>
+                    <p class="product-price">₹2,200</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="home-goods" data-name="Geometric Brass Sculpture" data-price="₹1,000" data-description="A striking mid-century modern inspired brass sculpture. Its geometric form creates a dynamic interplay of light and shadow." data-images="https://m.media-amazon.com/images/I/61A6pzIFiDL._SX679_.jpg,https://m.media-amazon.com/images/I/618gr1YlotL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61A6pzIFiDL._SX679_.jpg" alt="Geometric Brass Sculpture">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Geometric Brass Sculpture</h4>
+                    <p class="product-price">₹1,000</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Walnut Coaster Set" data-price="₹699" data-description="A set of four solid walnut wood coasters, finished with a natural oil to protect against moisture." data-images="https://m.media-amazon.com/images/I/41L0S2pJvrL._SY300_SX300_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71OP7hOUyDL._SX679_.jpg,https://m.media-amazon.com/images/I/81wENc5QScL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/41L0S2pJvrL._SY300_SX300_QL70_FMwebp_.jpg" alt="Walnut Coaster Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Walnut Coaster Set</h4>
+                    <p class="product-price">₹699</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Wooden Spice Box (Masala Dabba)" data-price="₹1,299" data-description="A traditional Sheesham wood spice box with 7 compartments and a spoon to keep your essential spices organized." data-images="https://m.media-amazon.com/images/I/71MquqwrYiL._SX679_.jpg,https://m.media-amazon.com/images/I/71A39O8LlqL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/71MquqwrYiL._SX679_.jpg" alt="Wooden Spice Box (Masala Dabba)">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Wooden Spice Box (Masala Dabba)</h4>
+                    <p class="product-price">₹1,299</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Marble Inlay Tray" data-price="₹3,200" data-description="A luxurious serving tray made from white marble with delicate floral inlay work using semi-precious stones." data-images="https://m.media-amazon.com/images/I/81QBFYcGo-L._SX679_.jpg,https://m.media-amazon.com/images/I/41z73pQpjUL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81QBFYcGo-L._SX679_.jpg" alt="Marble Inlay Tray">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Marble Inlay Tray</h4>
+                    <p class="product-price">₹3,200</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Brass Diya Set" data-price="₹850" data-description="A set of two traditional brass diyas (oil lamps), perfect for your puja room or as festive decor." data-images="https://m.media-amazon.com/images/I/41CsrE5YY0L._SX342_SY445_QL70_FMwebp_.jpg,https://m.media-amazon.com/images/I/71IQC9h-STL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/41CsrE5YY0L._SX342_SY445_QL70_FMwebp_.jpg" alt="Brass Diya Set">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Brass Diya Set</h4>
+                    <p class="product-price">₹850</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Hand-Carved Photo Frame" data-price="₹1,100" data-description="Display your cherished memories in this beautiful photo frame, hand-carved from mango wood by skilled artisans." data-images="https://m.media-amazon.com/images/I/81aFMSE42AL._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/81aFMSE42AL._SX679_.jpg" alt="Hand-Carved Photo Frame">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Hand-Carved Photo Frame</h4>
+                    <p class="product-price">₹1,100</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Cane Hanging Lantern" data-price="₹2,400" data-description="A beautiful, eco-friendly hanging lantern woven from natural cane. Creates a warm and inviting ambient light." data-images="https://m.media-amazon.com/images/I/51UT6qkeOUL.jpg,https://m.media-amazon.com/images/I/41QZ7zzioeL.jpg">
+                <img src="https://m.media-amazon.com/images/I/51UT6qkeOUL.jpg" alt="Cane Hanging Lantern">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Cane Hanging Lantern</h4>
+                    <p class="product-price">₹2,400</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Scented Soy Wax Candle" data-price="₹950" data-description="A hand-poured soy wax candle in a reusable ceramic jar. Infused with calming lavender and vanilla essential oils." data-images="https://m.media-amazon.com/images/I/61zoR8WjKnL._SY679_.jpg,https://m.media-amazon.com/images/I/71jjz-5smgL._SY679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61zoR8WjKnL._SY679_.jpg" alt="Scented Soy Wax Candle">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Scented Soy Wax Candle</h4>
+                    <p class="product-price">₹950</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Metal Wall Art" data-price="₹2,999" data-description="An abstract piece of metal wall art with a gold finish. This statement piece adds a modern and artistic flair to any room." data-images="https://m.media-amazon.com/images/I/61u-OlTxjXL.jpg,https://m.media-amazon.com/images/I/61KFY7hPsZL.jpg">
+                <img src="https://m.media-amazon.com/images/I/61u-OlTxjXL.jpg" alt="Metal Wall Art">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Metal Wall Art</h4>
+                    <p class="product-price">₹2,999</p>
+                </div>
+            </div>
+            <div class="product-card" data-category="home-goods" data-name="Wooden Serving Platter" data-price="₹1,450" data-description="A rustic serving platter crafted from a single piece of acacia wood, perfect for serving appetizers or cheese." data-images="https://m.media-amazon.com/images/I/61AUY6FWdbL._SX679_.jpg,https://m.media-amazon.com/images/I/71oChF8W4ML._SX679_.jpg">
+                <img src="https://m.media-amazon.com/images/I/61AUY6FWdbL._SX679_.jpg" alt="Wooden Serving Platter">
+                <button class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                <div class="product-info-overlay">
+                    <h4 class="product-name">Wooden Serving Platter</h4>
+                    <p class="product-price">₹1,450</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <img id="modal-main-image" src="" alt="Main product image">
+                    <div id="modal-thumbnails" class="modal-thumbnails"></div>
+                </div>
+                <div class="modal-info">
+                    <div class="modal-header">
+                        <h2 id="modal-title"></h2>
+                        <button id="modal-like-btn" class="like-btn"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <p id="modal-price"></p>
+                    <p id="modal-description"></p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="cart-close-btn" class="cart-close-btn">&times;</button>
+        </div>
+        <div id="cart-items-list" class="cart-items-list">
+            </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total-amount">₹0</span>
+            </div>
+            <button id="place-order-btn" class="place-order-btn">Place Order</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
